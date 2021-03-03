@@ -1,0 +1,35 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building an application
+    id 'application'
+
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
+    jcenter()
+    google()
+
+    maven {
+        url "https://maven.springframework.org/release"
+    }
+}
+
+dependencies {
+    // This dependency is found on compile classpath of this component and consumers.
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Use JUnit test framework
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// Define the main class for the application
+mainClassName = 'test.spring.App'
+
