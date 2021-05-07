@@ -24,6 +24,15 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    //MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'mysql:mysql-connector-java'
+
+    //jstl and jasper jstl과 jsp 구동을 위해 사용
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     // Use JUnit test framework
