@@ -22,7 +22,7 @@ public class TestController {
 	//테스트 페이지
 	@GetMapping("/test")
 	public String test() {
-		return "test";
+		return "test3";
 	}
 
 	//String 형식으로 jsp 띄우기 실습
