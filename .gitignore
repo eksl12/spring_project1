@@ -5,7 +5,7 @@
 build
 
 # Ignore application.yml
-application.yml
+application-prod.yml
 # ignore test directory
 temp/
 t2/
