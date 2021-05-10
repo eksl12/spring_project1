@@ -1,0 +1,17 @@
+server:
+    port: 8080
+spring:
+    datasource:
+        url: jdbc:mysql://zodaland.com:3307/dev
+        username: dev
+        password: dev
+        #driver-class-name: org.mysql.jdbc.Driver
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+    resource:
+        static-locations: classpath:/resources/,classpath:/static/
+mybatis:
+    type-aliases-package: test.spring.mapper
+    mapper-locations: mybatis/mapper/**/*.xml
