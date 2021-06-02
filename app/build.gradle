@@ -61,5 +61,5 @@ bootRun {
 }
 
 // Define the main class for the application
-mainClassName = 'test.spring.App'
+mainClassName = 'test.gradle.App'
 
