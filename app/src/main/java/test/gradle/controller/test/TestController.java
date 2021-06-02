@@ -1,4 +1,4 @@
-package test.spring.controller;
+package test.gradle.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 //RestController : api 만들기위해 JSON 형태로 데이터 반환, view를 불러들이지 않음
@@ -13,15 +13,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
+//log4j2 test
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class TestController {
+    //log4j2 init
+    private static final Logger logger = LogManager.getLogger(TestController.class);
+
 	//테스트 페이지
 	@GetMapping("/test")
 	public String test() {
+        logger.info("info log test");
 		return "test7";
 	}
 

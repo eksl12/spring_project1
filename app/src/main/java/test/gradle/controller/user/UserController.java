@@ -1,6 +1,6 @@
-package test.spring.controller.user;
+package test.gradle.controller.user;
 
-import test.spring.service.user.UserService;
+import test.gradle.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package test.spring.service.user.impl;
+package test.gradle.service.user.impl;
 
-import test.spring.mapper.user.UserMapper;
-import test.spring.service.user.UserService;
+import test.gradle.mapper.user.UserMapper;
+import test.gradle.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

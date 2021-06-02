@@ -1,4 +1,4 @@
-package test.spring.mapper.user;
+package test.gradle.mapper.user;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

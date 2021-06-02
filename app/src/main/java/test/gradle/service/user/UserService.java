@@ -1,4 +1,4 @@
-package test.spring.service.user;
+package test.gradle.service.user;
 
 import java.util.List;
 import java.util.Map;
