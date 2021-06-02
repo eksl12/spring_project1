@@ -1,0 +1,61 @@
+Configuration:
+    name: my_log
+
+    Properties:
+        Property:
+            name: log_path
+            value: "/logs"
+
+    Appenders:
+        Console:
+            name: console_appender
+            target: SYSTEM_OUT
+            PatternLayout:
+                pattern: "[%-5level] %d{HH:mm:ss.SSS} [%t] %c - %m%n%ex%n"
+            
+    Loggers:
+        Root:
+            level: info
+            AppenderRef:
+                - ref: console_appender
+        logger:
+            -
+                name: jdbc.resultset
+                level: "OFF"
+                additivity: false
+                AppenderRef:
+                    - ref: console_appender
+            
+            -
+                name: jdbc.audit
+                level: "OFF"
+                additivity: false
+                AppenderRef:
+                    - ref: console_appender
+            -
+                name: jdbc.sqlonly
+                level: "OFF"
+                additivity: false
+                AppenderRef:
+                    - ref: console_appender
+            -
+                name: jdbc.connection
+                level: 'OFF'
+                additivity: false
+                AppenderRef:
+                    - ref: console_appender
+            -
+                name: jdbc.sqltiming
+                level: "INFO"
+                additivity: false
+                AppenderRef:
+                    - ref: console_appender
+#            name: jdbc.resultsettable
+#            level: 'OFF'
+#            AppenderRef:
+#                - ref: console_appeder
+#
+#            name: jdbc.connection
+#            level: 'OFF'
+#            AppenderRef:
+#                - ref: console_appender
