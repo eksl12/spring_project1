@@ -8,5 +8,6 @@ public interface CorService {
 	String registerInCor(InCorVo vo);
 	List<OutCorVo> selectOutCor(OutCorVo vo);
 	String registerOutCor(OutCorVo cor);
-
+	String updateInCor(InCorVo vo);
+	String updateOutCor(OutCorVo vo);
 }

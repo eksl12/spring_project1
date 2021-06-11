@@ -42,6 +42,20 @@ public class CorServiceImpl implements CorService{
 		 mapper.registerOutCor(cor);
 		 return"submit";
 	}
+
+	@Override
+	public String updateInCor(InCorVo vo) {
+		// TODO Auto-generated method stub
+			mapper.updateInCor(vo);
+		return "update";
+	}
+
+	@Override
+	public String updateOutCor(OutCorVo vo) {
+		// TODO Auto-generated method stub
+			mapper.updateOutCor(vo);
+		return "update";
+	}
 	
 	
 
