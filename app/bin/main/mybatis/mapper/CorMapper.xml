@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.gradle.mapper.CorMapper">
+	<insert id="registerInCor"  parameterType="test.gradle.vo.InCorVo" keyProperty="id" >
+		INSERT INTO inCor(pName,charge,number,fax,corNumber,billCharge,billMail,regDate,sort) 
+		VALUES(#{pName},#{charge},#{number},#{fax},#{corNumber},#{billCharge},#{billMail},now(),#{sort})
+	</insert>
+	<select id="selectInCor" resultType="test.gradle.vo.InCorVo">
+		SELECT * FROM inCor
+		<where>
+		<if test='pName!=null and !pName.equals("")'>
+			AND pName LIKE '%'||#{pName}||'%'
+		</if>
+		<if test='id!=null and !id.equals("")'>
+			AND id = #{id}
+		</if>
+		</where>
+		ORDER BY REGDATE DESC
+	</select>
+	<update id="updateInCor" parameterType="test.gradle.vo.InCorVo">
+		UPDATE inCor SET 
+		pName=	#{pName},
+		charge= #{charge},
+		number=#{number} ,
+		fax=#{fax} ,
+		corNumber=#{corNumber} ,
+		billCharge= #{billCharge},
+		billMail= #{billMail}
+		WHERE id=#{id}
+		
+	</update>
+	<update id="updateOutCor" parameterType="test.gradle.vo.OutCorVo">
+		UPDATE outCor SET 
+		pName=	#{pName},
+		pCode=	#{pCode},
+		represent= #{represent},
+		number=#{number} ,
+		fax=#{fax} ,
+		address=#{address} ,
+		corNumber=#{corNumber} ,
+		billCharge= #{billCharge},
+		billMail= #{billMail}
+		WHERE id=#{id}
+	</update>
+	<insert id="registerOutCor"  parameterType="test.gradle.vo.OutCorVo" keyProperty="id" >
+		INSERT INTO 
+		outCor(pName,pCode,charge,number,account,memo,fax,name,pNumber,write,corNumber
+		represent,address,billCharge,billMail,regDate) 
+		VALUES(#{pName},#{pCode},#{number},#{fax},#{corNumber},
+		#{represent},#{address},#{billCharge},#{billMail},now())
+	</insert>
+	<select id="selectOutCor" resultType="test.gradle.vo.OutCorVo">
+		SELECT * FROM outCor
+		<where>
+		<if test='pName!=null and !pName.equals("")'>
+			AND
+			pName LIKE '%'||#{pName}||'%'
+		</if>
+		</where>
+		ORDER BY regDate
+	</select>
+</mapper>
