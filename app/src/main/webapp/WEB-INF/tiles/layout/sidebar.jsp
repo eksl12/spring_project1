@@ -23,7 +23,8 @@
 		<ul class="nav child_menu">
 		  <li><a href="dashboard">이거랑</a></li>
 		  <li><a href="dashboard2">이거만 구현</a></li>
-		  <li><a href="index3.html">Dashboard3</a></li>
+		  <li><a href="/cor/in">입고처</a></li>
+		  <li><a href="/cor/out">출고처</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>

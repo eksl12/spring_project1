@@ -55,7 +55,7 @@ pageEncoding="UTF-8"%>
 							<div class="field item form-group">
 								<label class="col-form-label col-md-3 col-sm-3  label-align">팩스번호</label>
 								<div class="col-md-6 col-sm-6">
-									<input class="form-control" type="tel" name="number"
+									<input class="form-control" type="tel" name="fax"
 										data-validate-length-range="8,20">
 								</div>
 							</div>
