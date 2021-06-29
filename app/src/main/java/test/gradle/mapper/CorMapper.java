@@ -14,4 +14,6 @@ public interface CorMapper {
 	List<InCorVo> selectInCor(InCorVo inCorVo);
 	int registerOutCor(OutCorVo outCorVo);
 	List<OutCorVo> selectOutCor (OutCorVo outCorVo);
+	int updateInCor(InCorVo inCorVo);
+	int updateOutCor(OutCorVo outCorVo);
 }

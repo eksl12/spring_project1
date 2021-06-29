@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,19 +33,47 @@ public class CorManageController {
 		logger.info("입고처 페이지호출");
 		InCorVo incor=null;
 		model.addAttribute("list", service.selectInCor(incor));
-		return VIEW_PATH+"inCorManage";
+		return VIEW_PATH+"InCorManage";
 	}
 	
 	@PostMapping("/in")
-	public String inCor(@ModelAttribute InCorVo incor,Model model) {
+	@ResponseBody
+	public String inCor(@RequestBody InCorVo incor) {
 
 		logger.info("입고처 등록");
-		model.addAttribute("state", service.registerInCor(incor));
-		model.addAttribute("list", service.selectInCor(incor));
-		
-		return VIEW_PATH+"inCorManage";
+		 service.registerInCor(incor);		
+		return "submit";
 		
 	}
+	@PostMapping("/inUpdate")
+	@ResponseBody
+	public String updateCor(@RequestBody InCorVo incor) {
+		
+		logger.info("입고처 수정");
+		service.updateInCor(incor);
+		
+		return "update";
+		
+	}
+	@PostMapping("/outUpdate")
+	@ResponseBody
+	public String outupdateCor(@RequestBody OutCorVo outcor) {
+		
+		logger.info("입고처 수정");
+		service.updateOutCor(outcor);
+		
+		return "update";
+		
+	}
+	@GetMapping("/selectIn/{id}")
+	@ResponseBody
+	public InCorVo outCor(@PathVariable("id") int id) {
+		logger.info("출고처 페이지호출");
+		InCorVo in= new InCorVo();
+		in.setId(id);
+		return service.selectInCor(in).get(0);
+	}
+	
 	
 	@GetMapping("/out")
 	public String outCor() {
