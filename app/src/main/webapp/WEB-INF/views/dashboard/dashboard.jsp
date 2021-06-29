@@ -2,6 +2,11 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!-- page content -->
 <div class="right_col" role="main">
+
+  <form action="/excel/download" method="get">
+    <button type="submit">엑셀 다운</button>
+  </form>
+
   <!-- top tiles -->
   <div class="row" style="display: inline-block;" >
   <div class="tile_count">
